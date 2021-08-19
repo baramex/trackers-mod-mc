@@ -1,9 +1,0 @@
-tile.tracker.name=Tracker
-tile.antenne.name=Antenna
-tile.brouiller.name=Jammer
-tile.trackerAdv.name=Tracker Advanced
-tile.server.name=Server
-
-item.anti_tracker.name=Anti Tracker
-
-itemGroup.trackersmod=Traker's Mod
