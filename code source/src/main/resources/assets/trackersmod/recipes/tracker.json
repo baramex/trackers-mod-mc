@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "ARA",
+        "DAD",
+        "QRQ"
+    ],
+   
+    "key":
+    {
+        "A":
+        {
+            "item": "trackersmod:antenne"
+        },
+        "R":
+        {
+            "item": "minecraft:redstone"
+        },
+        "D":
+        {
+            "item": "minecraft:diamond"
+        },
+        "Q":
+        {
+            "item": "minecraft:quartz"
+        }
+    },
+   
+    "result":
+    {
+        "item": "trackersmod:tracker",
+        "count": 1
+    }
+}

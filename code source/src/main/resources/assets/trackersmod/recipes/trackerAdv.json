@@ -1,0 +1,40 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "ARA",
+        "TST",
+        "ITI"
+    ],
+   
+    "key":
+    {
+        "A":
+        {
+            "item": "trackersmod:antenne"
+        },
+        "R":
+        {
+            "item": "minecraft:redstone"
+        },
+        "T":
+        {
+            "item": "trackersmod:tracker"
+        },
+        "S":
+        {
+            "item": "trackersmod:server"
+        },
+        "I":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+   
+    "result":
+    {
+        "item": "trackersmod:trackerAdv",
+        "count": 1
+    }
+}
