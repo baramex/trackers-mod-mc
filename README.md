@@ -1,5 +1,4 @@
-<h1>Code Source of mod</h1>
-.jar file: https://github.com/baramex/trackers-mod-mc/main/
+code source mod: https://github.com/baramex/trackers-mod-mc/code-source/
 
 ## infos ##
 Licence: lgpl-3.0<br/>
