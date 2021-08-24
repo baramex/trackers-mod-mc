@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "R R",
+        "IRI",
+        " Q "
+    ],
+   
+    "key":
+    {
+        "I":
+        {
+            "item": "minecraft:iron_ingot"
+        },
+        "R":
+        {
+            "item": "minecraft:redstone"
+        },
+        "Q":
+        {
+            "item": "minecraft:quartz"
+        }
+    },
+   
+    "result":
+    {
+        "item": "trackersmod:antenne",
+        "count": 1
+    }
+}
