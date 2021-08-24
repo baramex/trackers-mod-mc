@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "trackersmod:trackeradv" },
-        "facing=east": { "model": "trackersmod:trackeradv", "y": 90 },
-        "facing=south": { "model": "trackersmod:trackeradv", "y": 180 },
-        "facing=west": { "model": "trackersmod:trackeradv", "y": 270 }
-    }
-}
