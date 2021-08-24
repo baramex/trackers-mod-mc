@@ -1,4 +1,4 @@
-code source mod: https://github.com/baramex/trackers-mod-mc/code-source/
+code source mod: https://github.com/baramex/trackers-mod-mc/tree/code-source/
 
 ## infos ##
 Licence: lgpl-3.0<br/>
