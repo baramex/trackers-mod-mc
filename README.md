@@ -13,6 +13,8 @@ Mod minecraft 1.12.2 to track another players!
 
 <h4>if you want me to update the mod to a newer version, ask me!</h4>
 
+[curse forge](https://www.curseforge.com/minecraft/mc-mods/trackers-mod-by-baramex)
+
 # <u id='wiki'>Wiki:</u>
 ⚠️ multiplayer mod ⚠️<br/>
 ⚠️ needs RF/energy mod ⚠️
