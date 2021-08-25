@@ -31,7 +31,7 @@ Mod minecraft 1.12.2 to track another players!
 - Consumes 50,000 RF / tracking<br/><br/>
 <img src="http://baramex.fr:9999/github/trackers_mod_ressources/tracker craft.png" width="50%"><br/>
 
-## Craft atenna:
+## Craft antenna:
 - Can be placed in an area of 20 blocks around a server at any height<br/><br/>
 <img src="http://baramex.fr:9999/github/trackers_mod_ressources/atenna craft.png" width="50%"><br/>
 
