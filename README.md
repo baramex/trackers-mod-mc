@@ -13,6 +13,8 @@ Mod minecraft 1.12.2 to track another players!
 
 <h4>If you want me to update the mod to a newer version, ask me! 😃</h4>
 
+## [Wiki](https://github.com/baramex/trackers-mod-mc/wiki/Wiki)
+
 ## Download
 [![](https://img.shields.io/github/v/release/baramex/trackers-mod-mc?style=for-the-badge&label=last%20release)](https://github.com/baramex/trackers-mod-mc/releases/latest/)<br/>
 -- or --<br/>
