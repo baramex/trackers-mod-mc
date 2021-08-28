@@ -1,0 +1,12 @@
+{
+	"parent": "block/orientable",
+	"textures": {
+		"particle": "trackersmod:blocks/serverea",
+		"up": "trackersmod:blocks/serverea",
+		"down": "trackersmod:blocks/serverea",
+		"north": "trackersmod:blocks/serverno",
+		"east": "trackersmod:blocks/serverea",
+		"south": "trackersmod:blocks/serverea",
+		"west": "trackersmod:blocks/serverea"
+	}
+}

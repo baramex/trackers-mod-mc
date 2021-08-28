@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "trackersmod:server" },
+        "facing=east": { "model": "trackersmod:server", "y": 90 },
+        "facing=south": { "model": "trackersmod:server", "y": 180 },
+        "facing=west": { "model": "trackersmod:server", "y": 270 }
+    }
+}
