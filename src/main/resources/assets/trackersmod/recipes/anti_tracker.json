@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "RRR",
+        "ORO",
+        "OOO"
+    ],
+   
+    "key":
+    {
+        "R":
+        {
+            "item": "minecraft:redstone"
+        },
+        "O":
+        {
+            "item": "minecraft:obsidian"
+        }
+    },
+   
+    "result":
+    {
+        "item": "trackersmod:anti_tracker",
+        "count": 1
+    }
+}

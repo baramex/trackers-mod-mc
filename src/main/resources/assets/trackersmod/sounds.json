@@ -1,0 +1,7 @@
+{
+    "block.server.beep": {
+        "category": "block",
+        "subtitile": "block.server.beep",
+        "sounds": [{ "name": "trackersmod:block/server/beep", "stream": true }]
+    }
+}
