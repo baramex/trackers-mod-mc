@@ -1,4 +1,5 @@
 # Infos
+[![](https://tokei.rs/b1/github/baramex/trackers-mod-mc)]()<br/>
 [![](https://img.shields.io/github/languages/top/baramex/trackers-mod-mc?style=for-the-badge)]()
 
 [![](https://img.shields.io/github/downloads/baramex/trackers-mod-mc/total?style=for-the-badge)](https://github.com/baramex/trackers-mod-mc/releases/)
