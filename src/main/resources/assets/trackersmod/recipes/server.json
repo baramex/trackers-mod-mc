@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "ARA",
+        " A ",
+        "QRQ"
+    ],
+   
+    "key":
+    {
+        "A":
+        {
+            "item": "trackersmod:antenne"
+        },
+        "R":
+        {
+            "item": "minecraft:redstone"
+        },
+        "Q":
+        {
+            "item": "minecraft:quartz"
+        }
+    },
+   
+    "result":
+    {
+        "item": "trackersmod:server",
+        "count": 1
+    }
+}
