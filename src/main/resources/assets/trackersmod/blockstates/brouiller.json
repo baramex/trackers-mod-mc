@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "trackersmod:brouiller", "y": 180 },
-        "facing=east": { "model": "trackersmod:brouiller", "y": 270 },
-        "facing=south": { "model": "trackersmod:brouiller" },
-        "facing=west": { "model": "trackersmod:brouiller", "y": 90 }
-    }
-}
