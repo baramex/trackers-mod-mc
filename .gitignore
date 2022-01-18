@@ -19,3 +19,5 @@ README.txt
 build/
 .gradle/
 .settings/
+.gitignore
+gradle.properties
