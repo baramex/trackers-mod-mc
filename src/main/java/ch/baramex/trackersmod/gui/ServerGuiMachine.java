@@ -56,7 +56,7 @@ public class ServerGuiMachine extends GuiContainer {
     	renderHoveredToolTip(mouseX, mouseY);
     	
     	if(mouseX > guiLeft+xSize-21 && mouseX < guiLeft+xSize-9 && mouseY > guiTop+9 && mouseY < guiTop+100+11) {
-    		drawHoveringText(tile.getClientInt("energy") + " RF", mouseX, mouseY);
+    		drawHoveringText(tile.getClientInt("energy") + " / " + tile.energy.getMaxEnergyStored() + " RF", mouseX, mouseY);
     	}
     }
 	
@@ -65,7 +65,7 @@ public class ServerGuiMachine extends GuiContainer {
 			for(int x = 0; x < 100; x++) {
 				drawHorizontalLine(guiLeft+xSize-20, guiLeft+xSize-10, guiTop+10+x, (x % 2 == 0 ? new Color(110, 25, 25).getRGB() : new Color(48, 1, 1).getRGB()));
 			}
-			for(int x = 0; x < 100*energy/1000000; x++) {
+			for(int x = 0; x < 100*energy/tile.energy.getMaxEnergyStored(); x++) {
 				drawHorizontalLine(guiLeft+xSize-20, guiLeft+xSize-10, guiTop+100+9-x, (x % 2 == 1 ? new Color(184, 53, 53).getRGB() : new Color(92, 16, 16).getRGB()));
 			}
 			drawVerticalLine(guiLeft+xSize-21, guiTop+8, guiTop+101+8+2, Color.BLACK.getRGB());

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import ch.baramex.trackersmod.capabilities.ModCapabilities;
+import ch.baramex.trackersmod.config.Config;
 import ch.baramex.trackersmod.init.ModBlocks;
 import ch.baramex.trackersmod.init.ModItems;
 import ch.baramex.trackersmod.tools.ServerM;
@@ -23,13 +24,13 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class TileEntityTracker extends TileEntity implements ITickable {
 	
-	public static final int ANTENNE_MIN = 1;
-	public static final int ANTENNE_MAX = 3;
-	public static final int ENERGY_CONSUME = 50000;
-	public static final int MIN_BLOCK = 400;
-	public static final int MAX_BLOCK = 500;
-	public static final int MIN_PRECISION_BLOCK = 100;
-	public static final int MAX_PRECISION_BLOCK = 150;
+	public static final int ANTENNE_MIN = Config.MIN_ANTENNA;
+	public static final int ANTENNE_MAX = Config.MAX_ANTENNA;
+	public static final int ENERGY_CONSUME = Config.ENERGY_CONSUME_TRACKER;
+	public static final int MIN_BLOCK = Config.MIN_RANGE_TRACKER;
+	public static final int MAX_BLOCK = Config.MAX_RANGE_TRACKER;
+	public static final int MIN_PRECISION_BLOCK = Config.MIN_PRECISION_TRACKER;
+	public static final int MAX_PRECISION_BLOCK = Config.MAX_PRECISION_TRACKER;
 	
 	public ServerM serverG = new ServerM(0);
 	public Status.TrackStatus isGood = TrackStatus.ERROR_SERVER;
@@ -143,7 +144,7 @@ public class TileEntityTracker extends TileEntity implements ITickable {
 						if(nbAntenne > ANTENNE_MAX) {
 							nbAntenne = ANTENNE_MAX;
 						}
-						int blockMax = MIN_BLOCK+((nbAntenne-ANTENNE_MIN)*((MAX_BLOCK-MIN_BLOCK)/(ANTENNE_MAX-ANTENNE_MIN)));
+						int blockMax = MIN_BLOCK + (MAX_BLOCK - MIN_BLOCK) * ((nbAntenne - ANTENNE_MIN) / (ANTENNE_MAX - ANTENNE_MIN));
 						if(distance <= blockMax) {
 							// 2 / 4
 							getTileEntityByCapability(CapabilityEnergy.ENERGY).getCapability(CapabilityEnergy.ENERGY, null).extractEnergy(ENERGY_CONSUME/4, false);
@@ -188,7 +189,7 @@ public class TileEntityTracker extends TileEntity implements ITickable {
 										// 4 / 4
 										getTileEntityByCapability(CapabilityEnergy.ENERGY).getCapability(CapabilityEnergy.ENERGY, null).extractEnergy(ENERGY_CONSUME/4, false);
 										isGood = TrackStatus.TRACKING;
-							        	int pre = MAX_PRECISION_BLOCK-((nbAntenne-ANTENNE_MIN)*((MAX_PRECISION_BLOCK-MIN_PRECISION_BLOCK)/(ANTENNE_MAX-ANTENNE_MIN)));
+							        	int pre = MAX_PRECISION_BLOCK - (MAX_PRECISION_BLOCK - MIN_PRECISION_BLOCK) * ((nbAntenne - ANTENNE_MIN) / (ANTENNE_MAX - ANTENNE_MIN));
 							        	int ran = new Random().nextInt(pre);
 							        	int ran1 = new Random().nextInt(pre-ran);
 							        	int x1 = (int) player.posX-pre+ran;

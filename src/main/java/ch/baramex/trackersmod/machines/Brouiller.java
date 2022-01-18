@@ -170,8 +170,8 @@ public class Brouiller extends Block {
 	public static void setState(boolean active, World worldIn, BlockPos pos) {
 		IBlockState state = worldIn.getBlockState(pos);
 		
-		if(active) worldIn.setBlockState(pos, ModBlocks.tracker.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
-		else worldIn.setBlockState(pos, ModBlocks.tracker.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
+		if(active) worldIn.setBlockState(pos, ModBlocks.brouiller.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
+		else worldIn.setBlockState(pos, ModBlocks.brouiller.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
 	}
 	
 	@Override

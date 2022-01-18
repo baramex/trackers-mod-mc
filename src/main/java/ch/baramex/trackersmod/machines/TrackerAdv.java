@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import ch.baramex.trackersmod.Main;
+import ch.baramex.trackersmod.config.Config;
 import ch.baramex.trackersmod.init.ModBlocks;
 import ch.baramex.trackersmod.tileentity.TileEntityTrackerAdv;
 import ch.baramex.trackersmod.utils.Reference;
@@ -33,7 +34,7 @@ public class TrackerAdv extends Block implements ITileEntityProvider {
 	
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
-	List<String> tooltip = Arrays.asList(new String[]{TextFormatting.YELLOW + new TextComponentTranslation("tooltip." + Reference.MODID + ".trackerAdv.1").getFormattedText(), TextFormatting.DARK_GREEN + new TextComponentTranslation("tooltip." + Reference.MODID + ".trackerAdv.2").getFormattedText(), TextFormatting.YELLOW + new TextComponentTranslation("tooltip." + Reference.MODID + ".trackerAdv.3").getFormattedText(), TextFormatting.YELLOW + new TextComponentTranslation("tooltip." + Reference.MODID + ".trackerAdv.4").getFormattedText(), TextFormatting.DARK_RED + new TextComponentTranslation("tooltip." + Reference.MODID + ".trackerAdv.5").getFormattedText()});
+	List<String> tooltip = Arrays.asList(new String[]{TextFormatting.YELLOW + new TextComponentTranslation("tooltip." + Reference.MODID + ".tracker.1").getFormattedText(), TextFormatting.DARK_GREEN + new TextComponentTranslation("tooltip." + Reference.MODID + ".tracker.2").getFormattedText().replace("MAX_BLOCK", String.valueOf(Config.MAX_RANGE_TRACKER_ADV)), TextFormatting.YELLOW + new TextComponentTranslation("tooltip." + Reference.MODID + ".tracker.3").getFormattedText().replace("MIN_PRECISION", String.valueOf(Config.MIN_PRECISION_TRACKER_ADV)), TextFormatting.YELLOW + new TextComponentTranslation("tooltip." + Reference.MODID + ".tracker.4").getFormattedText().replace("MIN_ANTENNA", String.valueOf(Config.MIN_ANTENNA_ADV)).replace("MAX_ANTENNA", String.valueOf(Config.MAX_ANTENNA_ADV)), TextFormatting.DARK_RED + new TextComponentTranslation("tooltip." + Reference.MODID + ".tracker.5").getFormattedText().replace("ENERGY_CONSUME", String.valueOf(Config.ENERGY_CONSUME_TRACKER_ADV))});
 
 	public TrackerAdv(Material materialIn, String name) {
 		super(materialIn);
@@ -82,8 +83,8 @@ public class TrackerAdv extends Block implements ITileEntityProvider {
 		IBlockState state = worldIn.getBlockState(pos);
 		TileEntityTrackerAdv tileentity = (TileEntityTrackerAdv) worldIn.getTileEntity(pos);
 		
-		if(active) worldIn.setBlockState(pos, ModBlocks.tracker.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
-		else worldIn.setBlockState(pos, ModBlocks.tracker.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
+		if(active) worldIn.setBlockState(pos, ModBlocks.trackerAdv.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
+		else worldIn.setBlockState(pos, ModBlocks.trackerAdv.getDefaultState().withProperty(FACING, state.getValue(FACING)), 3);
 		
 		if(tileentity != null) {
 			tileentity.validate();

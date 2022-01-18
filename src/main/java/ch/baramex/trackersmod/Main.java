@@ -1,9 +1,13 @@
 package ch.baramex.trackersmod;
 
+import java.io.File;
+
 import ch.baramex.trackersmod.capabilities.ModCapabilities;
+import ch.baramex.trackersmod.config.Config;
 import ch.baramex.trackersmod.init.ModBlocks;
 import ch.baramex.trackersmod.proxy.CommonProxy;
 import ch.baramex.trackersmod.utils.Reference;
+import ch.baramex.trackersmod.utils.VersionChecker;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,6 +28,10 @@ License: lgpl-3.0
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Main {
+	public static VersionChecker versionChecker;
+	public static boolean alreadyVersionWarned = false;
+	public static File config;
+	
 	@Mod.Instance(Reference.MODID)
 	public static Main instance;
 	
@@ -45,6 +53,7 @@ public class Main {
 	public void preInit(FMLPreInitializationEvent e) {
 		proxy.preInit();
 		ModCapabilities.registerCapabilities();
+		Config.registerConfig(e);
 	}
 	
 	@Mod.EventHandler

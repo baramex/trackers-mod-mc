@@ -6,6 +6,7 @@ import java.util.Map;
 
 import ch.baramex.trackersmod.SoundsHandler;
 import ch.baramex.trackersmod.capabilities.ModCapabilities;
+import ch.baramex.trackersmod.config.Config;
 import ch.baramex.trackersmod.init.ModBlocks;
 import ch.baramex.trackersmod.tools.EnergyM;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,7 +21,7 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class TileEntityServer extends TileEntity implements ITickable {
 	
-	public EnergyM energy = new EnergyM(1000000, 100000);
+	public EnergyM energy = new EnergyM(Config.MAX_STORED_ENERGY_SERVER, Config.MAX_ENERGY_RECEIVE_PER_TICK_SERVER);
 	public int antenne;
 	public int nbMachine;
 	
