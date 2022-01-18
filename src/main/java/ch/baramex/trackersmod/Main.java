@@ -29,7 +29,6 @@ License: lgpl-3.0
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Main {
 	public static VersionChecker versionChecker;
-	public static boolean alreadyVersionWarned = false;
 	public static File config;
 	
 	@Mod.Instance(Reference.MODID)

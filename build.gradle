@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "1.2.3"
+version = "1.2.4"
 group = "ch.baramex.trackersmod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "trackersmod"
 
@@ -55,6 +55,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
 }
 
 processResources {

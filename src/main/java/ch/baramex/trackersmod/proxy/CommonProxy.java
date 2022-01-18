@@ -30,6 +30,7 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -47,7 +48,10 @@ public class CommonProxy {
 	}
 	
 	public void postInit() {
-		
+		//ERROR HERE
+		Main.versionChecker = new VersionChecker();
+		Thread versionCheckerThread = new Thread(Main.versionChecker, "Version Checker");
+		versionCheckerThread.start();
 	}
 	
 	public ListenableFuture<Object> addScheduledTaskClient(Runnable runnableToSchedule) {

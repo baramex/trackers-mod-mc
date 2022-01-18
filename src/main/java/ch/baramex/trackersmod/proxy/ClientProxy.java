@@ -29,9 +29,12 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
 public class ClientProxy extends CommonProxy {
@@ -52,9 +55,6 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void postInit() {
 		super.postInit();
-		Main.versionChecker = new VersionChecker();
-		Thread versionCheckerThread = new Thread(Main.versionChecker, "Version Checker");
-		versionCheckerThread.start();
 	}
 	
 	public ClientProxy() {
@@ -71,34 +71,30 @@ public class ClientProxy extends CommonProxy {
 		return Minecraft.getMinecraft().player;
 	}
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	public void onJoinWorld(PlayerTickEvent e) {
-		if(!Main.alreadyVersionWarned && e.player.world.isRemote) {
-			EntityPlayer player = e.player;
-			
-			ITextComponent text = new TextComponentTranslation("message." + Reference.MODID + ".login");
-			text.appendSibling(new TextComponentString(" tracker's mod ").setStyle(TextComponents.styleLink("https://www.curseforge.com/minecraft/mc-mods/trackers-mod-by-baramex", "tracker's mod curse forge")));
-			text.appendSibling(new TextComponentTranslation("message." + Reference.MODID + ".dev"));
-			text.appendSibling(new TextComponentString(" baramex").setStyle(TextComponents.styleLink("https://github.com/baramex", "baramex github")));
-			text.getStyle().setColor(TextFormatting.GREEN);
-			
-			player.sendMessage(text);
-			
-			if(Main.versionChecker.isLatestVersion()) {
-				ITextComponent uptodate = new TextComponentTranslation("message." + Reference.MODID + ".uptodate");
-	        	uptodate.getStyle().setColor(TextFormatting.DARK_GREEN);
-	        	
-	        	player.sendMessage(uptodate);
-			}
-			else {
-				ITextComponent release = new TextComponentTranslation("message." + Reference.MODID + ".newrelease");
-	        	release.appendSibling(new TextComponentString(" " + Main.versionChecker.getLatestVersion() + ", " + new TextComponentTranslation("message." + Reference.MODID + ".download").getFormattedText()).setStyle(TextComponents.styleLink("https://www.curseforge.com/minecraft/mc-mods/trackers-mod-by-baramex/files", "tracker's mod curse forge")));
-	        	release.getStyle().setColor(TextFormatting.RED);
-	        	
-	        	player.sendMessage(release);
-			}
-			
-			Main.alreadyVersionWarned = true;
+	@SubscribeEvent
+	public void onPlayerJoin(PlayerLoggedInEvent e) {
+		EntityPlayer player = e.player;
+		
+		ITextComponent text = new TextComponentTranslation("message." + Reference.MODID + ".login");
+		text.appendSibling(new TextComponentString(" tracker's mod ").setStyle(TextComponents.styleLink("https://www.curseforge.com/minecraft/mc-mods/trackers-mod-by-baramex", "tracker's mod curse forge")));
+		text.appendSibling(new TextComponentTranslation("message." + Reference.MODID + ".dev"));
+		text.appendSibling(new TextComponentString(" baramex").setStyle(TextComponents.styleLink("https://github.com/baramex", "baramex github")));
+		text.getStyle().setColor(TextFormatting.GREEN);
+		
+		player.sendMessage(text);
+		
+		if(Main.versionChecker.isLatestVersion()) {
+			ITextComponent uptodate = new TextComponentTranslation("message." + Reference.MODID + ".uptodate");
+        	uptodate.getStyle().setColor(TextFormatting.DARK_GREEN);
+        	
+        	player.sendMessage(uptodate);
+		}
+		else {
+			ITextComponent release = new TextComponentTranslation("message." + Reference.MODID + ".newrelease");
+        	release.appendSibling(new TextComponentString(" " + Main.versionChecker.getLatestVersion() + ", " + new TextComponentTranslation("message." + Reference.MODID + ".download").getFormattedText()).setStyle(TextComponents.styleLink("https://www.curseforge.com/minecraft/mc-mods/trackers-mod-by-baramex/files", "tracker's mod curse forge")));
+        	release.getStyle().setColor(TextFormatting.RED);
+        	
+        	player.sendMessage(release);
 		}
 	}
 }

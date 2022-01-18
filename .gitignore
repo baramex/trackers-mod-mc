@@ -1,7 +1,5 @@
 eclipse/
-runClient/
-runClient1/
-runServer/
+run*/
 bin/
 gradle/
 *.launch
@@ -13,8 +11,7 @@ changelog.txt
 CREDITS.txt
 gradlew
 gradlew.bat
-LICENSE.txt
-LICENSE-*.txt
+LICENSE*.txt
 README.txt
 build/
 .gradle/
